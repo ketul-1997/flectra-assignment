@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+        <record id="society_info_view" model="ir.ui.view">
+            <field name="name">society info form view</field>
+            <field name="model">society.information</field>
+            <field name="arch" type="xml">
+                <form string="society Information">
+                    <group>
+                        <field name="no_of_house"/>
+                        <field name="house_area"/>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="house_type"/>
+                        <field name="society_area"/>
+                        <field name="playground"/>
+                        <field name="floor_id"/>
+                        <field name="amenity_ids"/>
+                        <field name="start_date"/>
+
+                    </group>
+                </form>
+            </field>
+        </record>
+
+         <record id="society_info_list_view" model="ir.ui.view">
+            <field name="name">society information list view</field>
+            <field name="model">society.information</field>
+            <field name="arch" type="xml">
+                <tree string="society information">
+                        <field name="no_of_house"/>
+                        <field name="house_area"/>
+                        <field name="house_type"/>
+                        <field name="society_area"/>
+                        <field name="playground"/>
+                        <field name="name"/>
+
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="society_info_search_view" model="ir.ui.view">
+            <field name="name">society information search view</field>
+            <field name="model">society.information</field>
+            <field name="arch" type="xml">
+                <search string="society information">
+                        <field name="no_of_house"/>
+                        <field name="house_area"/>
+                </search>
+            </field>
+        </record>
+
+         <record id="society_info_calendar_view" model="ir.ui.view">
+            <field name="name">society information calendar view</field>
+            <field name="model">society.information</field>
+            <field name="arch" type="xml">
+                <calendar string="society information" date_start="start_date">
+                        <field name="house_type"/>
+                        <field name="no_of_house"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="action_society_information" model="ir.actions.act_window">
+            <field name="name">society</field>
+            <field name="res_model">society.information</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,search,calendar</field>
+        </record>
+
+
+        <menuitem id="society_info_root" name="society_info"/>
+
+        <menuitem id="society_info_config" name="Rooms Config" parent="society_info_root"/>
+
+        <menuitem id="society_info_many" name="Rooms" action="action_society_information"
+                  parent="society_info_config"/>
+
+    </data>
+</flectra>

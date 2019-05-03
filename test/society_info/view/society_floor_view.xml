@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+        <record id="society_floor_view" model="ir.ui.view">
+            <field name="name">society floor form view</field>
+            <field name="model">society.floor</field>
+            <field name="arch" type="xml">
+                <form string="society floor">
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="total_rooms"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+         <record id="society_floor_list_view" model="ir.ui.view">
+            <field name="name">society floor list view</field>
+            <field name="model">society.floor</field>
+            <field name="arch" type="xml">
+                <tree string="society floor">
+                         <field name="name"/>
+                         <field name="code"/>
+                         <field name="total_rooms"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="society_info_search_view" model="ir.ui.view">
+            <field name="name">society floor search view</field>
+            <field name="model">society.floor</field>
+            <field name="arch" type="xml">
+                <search string="society information">
+                        <field name="name"/>
+                        <field name="code"/>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="action_society_floor" model="ir.actions.act_window">
+            <field name="name">floor</field>
+            <field name="res_model">society.floor</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+
+        <menuitem id="society_floor_menu" name="floors" action="action_society_floor"
+                  parent="society_info_config"/>
+
+    </data>
+</flectra>

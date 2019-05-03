@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+        <record id="society_amienities_view" model="ir.ui.view">
+            <field name="name">society floor form view</field>
+            <field name="model">society.ameinities</field>
+            <field name="arch" type="xml">
+                <form string="society amienities">
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="info_ids"/>
+                        <field name="total_rooms"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+         <record id="society_amienities_list_view" model="ir.ui.view">
+            <field name="name">society aminieties list view</field>
+            <field name="model">society.ameinities</field>
+            <field name="arch" type="xml">
+                <tree string="society amienities">
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="total_rooms"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="society_aminities_search_view" model="ir.ui.view">
+            <field name="name">society amienities search view</field>
+            <field name="model">society.ameinities</field>
+            <field name="arch" type="xml">
+                <search string="society amienities">
+                        <field name="name"/>
+                        <field name="code"/>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="action_society_amienities" model="ir.actions.act_window">
+            <field name="name">amienities</field>
+            <field name="res_model">society.ameinities</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+
+        <menuitem id="society_aminities_menu" name="amienities" action="action_society_amienities"
+                  parent="society_info_config"/>
+
+    </data>
+</flectra>
